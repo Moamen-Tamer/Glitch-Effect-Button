@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    font-family: 'Courier New', monospace;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.glitch-btn {
+    position: relative;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: transparent;
+    border: 2px solid #00ff41;
+    color: #00ff41;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.glitch-btn:hover {
+    background: #00ff41;
+    color: #000;
+    box-shadow: 
+        0 0 10px #00ff41,
+        0 0 20px #00ff41,
+        0 0 40px #00ff41;
+}
+
+.glitch-btn::before,
+.glitch-btn::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.glitch-btn:hover::before {
+    animation: glitch-1 0.3s infinite;
+    color: #ff0040;
+    opacity: 1;
+}
+
+.glitch-btn:hover::after {
+    animation: glitch-2 0.3s infinite;
+    color: #0080ff;
+    opacity: 1;
+}
+
+@keyframes glitch-1 {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitch-2 {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px, -2px); }
+    40% { transform: translate(2px, 2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0); }
+}
+
+.glitch-btn-2 {
+    border-color: #ff0080;
+    color: #ff0080;
+}
+
+.glitch-btn-2:hover {
+    background: #ff0080;
+    box-shadow: 
+        0 0 10px #ff0080,
+        0 0 20px #ff0080,
+        0 0 40px #ff0080;
+}
+
+.glitch-btn-3 {
+    border-color: #00d4ff;
+    color: #00d4ff;
+}
+
+.glitch-btn-3:hover {
+    background: #00d4ff;
+    box-shadow: 
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff,
+        0 0 40px #00d4ff;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
